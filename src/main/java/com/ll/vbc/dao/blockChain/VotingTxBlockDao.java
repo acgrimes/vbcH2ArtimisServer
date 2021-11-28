@@ -102,7 +102,7 @@ public class VotingTxBlockDao extends Dao {
         } catch(SQLException ex) {
             ex.printStackTrace();
         }
-        return Optional.of(votingTxBlock);
+        return Optional.ofNullable(votingTxBlock);
     }
 
     /**
