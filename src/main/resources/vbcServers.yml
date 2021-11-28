@@ -1,0 +1,16 @@
+servers:
+  - id: A
+    httpPort: 8444
+    reactivePort: 61005
+    host: localhost
+    state: Follower
+  - id: B
+    httpPort: 8544
+    reactivePort: 61006
+    host: localhost
+    state: Follower
+  - id: C
+    httpPort: 8644
+    reactivePort: 61007
+    host: localhost
+    state: Follower

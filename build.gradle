@@ -1,0 +1,50 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id 'application'
+}
+
+apply plugin: 'idea'
+
+group 'com.ll'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.11
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation group: 'org.apache.activemq', name: 'artemis-core-client', version: '2.16.0'
+    implementation group: 'org.apache.activemq', name: 'artemis-server', version: '2.16.0'
+    implementation group: 'org.apache.activemq', name: 'artemis-commons', version: '2.16.0'
+    implementation group: 'org.apache.activemq', name: 'artemis-jms-client', version: '2.16.0'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.10'
+    implementation group: 'commons-codec', name: 'commons-codec', version: '1.14'
+    implementation group: 'commons-io', name: 'commons-io', version: '2.6'
+    implementation group: 'org.bouncycastle', name: 'bcprov-jdk15on', version: '1.65'
+    implementation group: 'org.bouncycastle', name: 'bcpkix-jdk15on', version: '1.65'
+    implementation group: 'org.bouncycastle', name: 'bctls-jdk15on', version: '1.65'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.10.0'
+    implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-yaml', version: '2.11.2'
+    implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
+    implementation group: 'com.h2database', name: 'h2', version: '1.4.200'
+    implementation group: 'com.zaxxer', name: 'HikariCP', version: '3.4.5'
+
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.7.0'
+    testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.7.0'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: '5.7.0'
+    testImplementation group: 'junit', name: 'junit', version: '4.13.1'
+    testImplementation group: 'org.mockito', name: 'mockito-junit-jupiter', version: '3.6.28'
+
+}
+
+test {
+    useJUnitPlatform()
+}
+
+mainClassName="com.ll.vbc.Application"
