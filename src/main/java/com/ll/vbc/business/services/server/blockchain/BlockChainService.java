@@ -157,6 +157,11 @@ public class BlockChainService {
             merkleTreeDao.update(result.get());
         } else {
             result = (generateNewMerkleTree(consensusLog));
+            if(result.isPresent()) {
+                merkleTreeDao.insert(result.get());
+            } else {
+                log.warn("MerkleTree object is Null");
+            }
         }
         return result;
     }
